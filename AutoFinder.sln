@@ -11,7 +11,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoFinder.HelloWorld", "Au
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoFinder.SelfHost", "AutoFinder.SelfHost\AutoFinder.SelfHost.csproj", "{C3BD19E6-5D97-41DB-824F-3BF4040FED79}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoFinder.InProcessHost", "AutoFinder.InProcessHost\AutoFinder.InProcessHost.csproj", "{B68F924A-4F1A-4040-A908-D4E135396C13}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoFinder.IntegrationTests", "AutoFinder.IntegrationTests\AutoFinder.IntegrationTests.csproj", "{B68F924A-4F1A-4040-A908-D4E135396C13}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
