@@ -6,7 +6,7 @@ namespace AutoFinder.Api
     public interface ICarController
     {
     }
-
+    [RoutePrefix("api/car")]
     public class CarController : ApiController, ICarController
     {
         private readonly CarRepository _carRepository;
@@ -16,31 +16,23 @@ namespace AutoFinder.Api
             _carRepository = carRepository;
         }
 
-        // GET api/<controller>
-        public IEnumerable<string> Get()
+        [Route("")]
+        public IEnumerable<Car> Get()
         {
-            return new string[] { "value1", "value2" };
+            return new Car[] { new Car { Color = "red", Id = 1 }, new Car { Color = "blue", Id = 2 } };
         }
 
-        // GET api/<controller>/5
-        public string Get(int id)
+        [Route("{id:int}")]
+        public Car Get(int id)
         {
-            return "value";
+            return new Car{Color="red",Id = id};
         }
 
-        // POST api/<controller>
+        [Route("")]
         public void Post([FromBody]string value)
         {
         }
 
-        // PUT api/<controller>/5
-        public void Put(int id, [FromBody]string value)
-        {
-        }
 
-        // DELETE api/<controller>/5
-        public void Delete(int id)
-        {
-        }
     }
 }
