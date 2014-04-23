@@ -9,9 +9,9 @@ namespace AutoFinder.Api
     [RoutePrefix("api/car")]
     public class CarController : ApiController, ICarController
     {
-        private readonly CarRepository _carRepository;
+        private readonly ICarRepository _carRepository;
         
-        public CarController(CarRepository carRepository)
+        public CarController(ICarRepository carRepository)
         {
             _carRepository = carRepository;
         }
@@ -19,13 +19,15 @@ namespace AutoFinder.Api
         [Route("")]
         public IEnumerable<Car> Get()
         {
-            return new Car[] { new Car { Color = "red", Id = 1 }, new Car { Color = "blue", Id = 2 } };
+            return _carRepository.GetAllCars();
+            
         }
 
         [Route("{id:int}")]
         public Car Get(int id)
         {
-            return new Car{Color="red",Id = id};
+            return _carRepository.GetCar(id);
+            
         }
 
         [Route("")]

@@ -34,6 +34,7 @@ namespace AutoFinder.Api
             var kernel = new StandardKernel();
             kernel.Bind<Func<IKernel>>().ToMethod(ctx => () => new Bootstrapper().Kernel);
             kernel.Bind<ICarController>().To<CarController>();
+            kernel.Bind<ICarRepository>().To<CarRepository>();
             config.DependencyResolver = new NinjectDependencyResolver(kernel);
         }
     }
