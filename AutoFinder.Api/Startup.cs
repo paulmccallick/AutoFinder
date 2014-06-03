@@ -24,7 +24,7 @@ namespace AutoFinder.Api
             ConfigureNinject(config);
 
             config.MapHttpAttributeRoutes();
-            config.Routes.MapHttpRoute("cars", "api/{Controller}");
+            //config.Routes.MapHttpRoute("cars", "api/{Controller}");
             app.UseWebApi(config);
         }
 
